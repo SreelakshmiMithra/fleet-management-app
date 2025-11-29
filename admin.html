@@ -3,9 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fleet Management Login</title>
+    <title>Admin Dashboard-Fleet Management </title>
+    <link rel="stylesheet" href="admin.css">
 </head>
 <body>
+    <!--Navbar-->
+    <div  class="navbar">
+        <span>Filters:</span>
+        <select id="filterCategory" onchange="applyFilters()">
+            <option value="All">All Categories</option>
+            <option value="Auto">Auto</option>
+            <option value="Car">Car</option>
+            <option value="Truck">Truck</option>
+            <option value="Bus">Bus</option>
+        </select>
+        <select id="filterAvaialability" onchange="applyFilters()">
+            <option value="All">All Avaialability</option>
+            <option value="Available">Available</option>
+            <option value="UnAvailable">UnAvailable</option>
+            
+            
+
+
+        </select>
+
+        <button onclick ="clearFilters()">Clear Filters</button>
+        </div>
+
+        <div class="main-layout">
+            <div class ="sidebar">
+                <h3>Add Fleet</h3>
+                <input type ="text" id="regNo" placeholder="reg No of Vehicle">
+                <select id ="category">
+                    <option value="Auto">Auto</option>
+                    <option value="Car">Car</option>
+                    <option value="Truck">Truck</option>
+                    <option value="Bus">Bus</option>
+                </select>
+                <input type = "text" id ="driverName" placeholder="Driver Name">
+                <label>
+                    <input type="checkbox" id="availability"><span style ="margin-left:8px;">Available</span>
+                    Available
+
+                </label>
+                <button onclick="addFleet()">Add Fleet</button>
+
+               
+            </div>
+            <div clas="main-content">
+                <div id ="cardsContainer" class="cards-container"></div>
+                    <!-- Fleet cards will be dynamically added here -->
+            </div>
+        </div>
+            
+    </div>
+    <script src="admin.js"></script>
     
 </body>
 </html>
