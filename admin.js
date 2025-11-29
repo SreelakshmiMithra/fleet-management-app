@@ -38,7 +38,7 @@ function addFleet(){
     document.getELementById('driverName').value='';
     document.getELementById('availability').checked=false;
     renderCards();
-
+ 
 
 }
 
@@ -53,6 +53,7 @@ function renderCards(){
     }
     container.innerHTML=dataToShow.map(vehicle=>`
     <div class="card">
+    <img src="https://coding-platform.s3.amazonaws.com/dev/lms/tickets/5e80fcb6-3f8e-480c-945b-30a5359eb40e/JNmYjkVr3WOjsrbu.png" alt="Vehicle Image" class="vehicle-image">
         <h4>${vehicle.regNo}</h4>
         <p><strong>Category:</strong> ${vehicle.category}</p>
         <p><strong>Driver Name:</strong> ${vehicle.driverName}</p>
